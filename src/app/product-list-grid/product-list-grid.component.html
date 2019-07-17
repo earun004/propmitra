@@ -1,0 +1,920 @@
+
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-4 col-md-3 sidebar-explore-wrapper-col">
+  <div class="sidebar-explore">
+	<div class="filter">
+	  <h2>Search criteria</h2>
+	  <div class="form-group">
+		<label>Keyword</label>
+		<input type="text" class="form-control" placeholder="Search by keyword ...">
+	  </div>
+	  <!-- /.form-group -->
+	  <div class="form-group">
+		<label>City</label>
+		<select class="form-control">
+		  <option>Location</option>
+		  <option>Chicago</option>
+		  <option>San Francisco</option>
+		  <option>Seattle</option>
+		  <option>New York</option>
+		  <option>Washington</option>
+		</select>
+	  </div>
+	  <!-- /.form-group -->
+	  
+	  <div class="form-group">
+		<label>Price Slider</label>
+		<ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ng5-slider>
+	  </div>
+	  
+	  <!-- BHK group -->
+	  <div class="form-group">
+		
+			<label>No. of Bed Rooms</label>
+			<div class="checkbox-list">
+			  <!-- /.form-check -->
+			  <div class="form-check">
+				<label class="form-check-label">
+				  <div class="checkbox-wrapper"><input type="checkbox" class="form-check-input"><span class="indicator"></span></div> 1 BHK
+				</label>
+			  </div>
+			  
+			  <!-- /.form-check -->
+			  <div class="form-check">
+				<label class="form-check-label">
+				  <div class="checkbox-wrapper"><input type="checkbox" class="form-check-input"><span class="indicator"></span></div> 2 BHK
+				</label>
+			  </div>
+			  
+			  <!-- /.form-check -->
+			  <div class="form-check">
+				<label class="form-check-label">
+				  <div class="checkbox-wrapper"><input type="checkbox" class="form-check-input"><span class="indicator"></span></div> 3 BHK
+				</label>
+			  </div>
+			  
+			  <!-- /.form-check -->
+			  <div class="form-check">
+				<label class="form-check-label">
+				  <div class="checkbox-wrapper"><input type="checkbox" class="form-check-input"><span class="indicator"></span></div> 4 BHK and above
+				</label>
+			  </div>
+			  
+			</div>
+			<!-- /.checkbox-list -->
+		  
+	  </div>
+	  <!-- /.BHK group -->
+	  
+	  <!-- Property Type group -->
+	  <div class="form-group">
+		<!--fieldset-->
+			<label>Property Type</label>
+			<div class="checkbox-list">
+			  <!-- /.form-check -->
+			  <div class="form-check">
+				<label class="form-check-label">
+				  <div class="checkbox-wrapper"><input type="checkbox" class="form-check-input"><span class="indicator"></span></div> Commercial
+				</label>
+			  </div>
+			  
+			  <!-- /.form-check -->
+			  <div class="form-check">
+				<label class="form-check-label">
+				  <div class="checkbox-wrapper"><input type="checkbox" class="form-check-input"><span class="indicator"></span></div> Residential
+				</label>
+			  </div>
+			  
+			  <!-- /.form-check -->
+			  <div class="form-check">
+				<label class="form-check-label">
+				  <div class="checkbox-wrapper"><input type="checkbox" class="form-check-input"><span class="indicator"></span></div> Agricultural Land
+				</label>
+			  </div>
+			  
+			</div>
+			<!-- /.checkbox-list -->
+		  <!--/fieldset-->
+	  </div>
+	  <!-- /.Property Type group -->
+	  
+	  <!-- Property Status group -->
+	  <div class="form-group">
+		<!--fieldset-->
+			<label>Property Status</label>
+			<div class="checkbox-list">
+			  <!-- /.form-check -->
+			  <div class="form-check">
+				<label class="form-check-label">
+				  <div class="checkbox-wrapper"><input type="checkbox" class="form-check-input"><span class="indicator"></span></div> Resale
+				</label>
+			  </div>
+			  
+			  <!-- /.form-check -->
+			  <div class="form-check">
+				<label class="form-check-label">
+				  <div class="checkbox-wrapper"><input type="checkbox" class="form-check-input"><span class="indicator"></span></div> Upcoming
+				</label>
+			  </div>
+			  
+			  <!-- /.form-check -->
+			  <div class="form-check">
+				<label class="form-check-label">
+				  <div class="checkbox-wrapper"><input type="checkbox" class="form-check-input"><span class="indicator"></span></div> Under Construction
+				</label>
+			  </div>
+			  
+			</div>
+			<!-- /.checkbox-list -->
+		  <!--/fieldset-->
+	  </div>
+	  <!-- /.Property Status group -->
+	  
+	  <!-- Listed By group -->
+	  <div class="form-group">		
+			<label>Listed By</label>
+			<div class="checkbox-list">
+			  <!-- /.form-check -->
+			  <div class="form-check">
+				<label class="form-check-label">
+				  <div class="checkbox-wrapper"><input type="checkbox" class="form-check-input"><span class="indicator"></span></div> Agent
+				</label>
+			  </div>
+			  
+			  <!-- /.form-check -->
+			  <div class="form-check">
+				<label class="form-check-label">
+				  <div class="checkbox-wrapper"><input type="checkbox" class="form-check-input"><span class="indicator"></span></div> Property Owner
+				</label>
+			  </div>
+			  
+			</div>
+			<!-- /.checkbox-list -->
+		  
+	  </div>
+	  <div style="height: 40px;"></div>
+	  <!-- /.Listed By group -->
+	  <div class="form-group-btn form-group-btn-placeholder-gap">
+		<button type="submit" class="btn btn-primary btn-block">Search</button>
+	  </div>
+	  <!-- /.form-group -->
+	</div>
+	<!-- /.filter -->
+  </div>
+  <!-- /.sidebar-explore -->
+</div>
+<!-- /.col-* -->
+<div class="col-sm-8 col-md-9">
+  <div class="content">
+	<div class="row">
+	  <div class="col-md-6 col-lg-3">
+		<div class="listing-box">
+		  <div class="listing-box-inner">
+			<a href="listings-detail.html" class="listing-box-image">
+			  <span class="listing-box-image-content" style="background-image: url(/assets/explore/img/tmp/listing-1.jpg)"></span><!-- /.listing-box-image-content -->
+			  <span class="listing-box-category tag">Commercial</span>
+			  <span class="listing-box-rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+			  </span>
+			</a><!-- /.listing-box-image -->
+			<div class="listing-box-content">
+			  <h2><a href=".#/property-info">Custom Lawn Care</a></h2>
+			  <h3>2287 Maple Avenue Stockton</h3>
+			  <div class="actions">
+				<div class="actions-button">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+				<!-- /.actions-button -->
+				<ul class="actions-list">
+				  <li><a href="#">Add to compare</a></li>
+				  <li><a href="#">Add to favorites</a></li>
+				  <li><a href="#">Report listing</a></li>
+				</ul>
+				<!-- /.actions-list -->
+			  </div>
+			  <!-- /.actions -->
+			</div>
+			<!-- /.listing-box-content -->
+			<div class="listing-box-attributes">
+			  <dl>
+				<dt>No. of Bed Rooms</dt>
+				<dd>3 BHK</dd>
+				<dt>Status</dt>
+				<dd>Upcoming</dd>
+				<dt>Type</dt>
+				<dd>Sale</dd>
+			  </dl>
+			</div>
+			<!-- /.listing-box-attributes -->
+			<div class="listing-box-attributes-icons">
+			  <ul>
+				<li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+				<li><i class="fa fa-shower"></i> <span>2</span></li>
+				<li><i class="fa fa-car"></i> <span>1</span></li>
+			  </ul>
+			</div>
+			<!-- /.listing-box-attributes -->
+		  </div>
+		  <!-- /.listing-box-inner -->
+		</div>
+		<!-- /.listing-box -->
+	  </div>
+	  <!-- /.col-* -->
+	  <div class="col-md-6 col-lg-3">
+		<div class="listing-box">
+		  <div class="listing-box-inner">
+			<a href="listings-detail.html" class="listing-box-image">
+			  <span class="listing-box-image-content" style="background-image: url(/assets/explore/img/tmp/listing-2.jpg)"></span><!-- /.listing-box-image-content -->
+			  <span class="listing-box-category tag">Residential</span>
+			  <span class="listing-box-rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+			  </span>
+			</a><!-- /.listing-box-image -->
+			<div class="listing-box-content">
+			  <h2><a href="listings-detail.html">Freelance Office</a></h2>
+			  <h3>4458 Thompson Drive Richmond</h3>
+			  <div class="actions">
+				<div class="actions-button">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+				<!-- /.actions-button -->
+				<ul class="actions-list">
+				  <li><a href="#">Add to compare</a></li>
+				  <li><a href="#">Add to favorites</a></li>
+				  <li><a href="#">Report listing</a></li>
+				</ul>
+				<!-- /.actions-list -->
+			  </div>
+			  <!-- /.actions -->
+			</div>
+			<!-- /.listing-box-content -->
+			<div class="listing-box-attributes">
+			  <dl>
+				<dt>No. of Bed Rooms</dt>
+				<dd>3 BHK</dd>
+				<dt>Status</dt>
+				<dd>Upcoming</dd>
+				<dt>Type</dt>
+				<dd>Sale</dd>
+			  </dl>
+			</div>
+			<!-- /.listing-box-attributes -->
+			<div class="listing-box-attributes-icons">
+			  <ul>
+				<li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+				<li><i class="fa fa-shower"></i> <span>2</span></li>
+				<li><i class="fa fa-car"></i> <span>1</span></li>
+			  </ul>
+			</div>
+			<!-- /.listing-box-attributes -->
+		  </div>
+		  <!-- /.listing-box-inner -->
+		</div>
+		<!-- /.listing-box -->
+	  </div>
+	  <!-- /.col-* -->
+	  <div class="col-md-6 col-lg-3">
+		<div class="listing-box">
+		  <div class="listing-box-inner">
+			<a href="listings-detail.html" class="listing-box-image">
+			  <span class="listing-box-image-content" style="background-image: url(/assets/explore/img/tmp/listing-6.jpg)"></span><!-- /.listing-box-image-content -->
+			  <span class="listing-box-category tag">Residential</span>
+			  <span class="listing-box-rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+			  </span>
+			</a><!-- /.listing-box-image -->
+			<div class="listing-box-content">
+			  <h2><a href="listings-detail.html">Little Tavern</a></h2>
+			  <h3>2164 Hilltop Haven Drive Newark</h3>
+			  <div class="actions">
+				<div class="actions-button">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+				<!-- /.actions-button -->
+				<ul class="actions-list">
+				  <li><a href="#">Add to compare</a></li>
+				  <li><a href="#">Add to favorites</a></li>
+				  <li><a href="#">Report listing</a></li>
+				</ul>
+				<!-- /.actions-list -->
+			  </div>
+			  <!-- /.actions -->
+			</div>
+			<!-- /.listing-box-content -->
+			<div class="listing-box-attributes">
+			  <dl>
+				<dt>No. of Bed Rooms</dt>
+				<dd>3 BHK</dd>
+				<dt>Status</dt>
+				<dd>Upcoming</dd>
+				<dt>Type</dt>
+				<dd>Sale</dd>
+			  </dl>
+			</div>
+			<!-- /.listing-box-attributes -->
+			<div class="listing-box-attributes-icons">
+			  <ul>
+				<li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+				<li><i class="fa fa-shower"></i> <span>2</span></li>
+				<li><i class="fa fa-car"></i> <span>1</span></li>
+			  </ul>
+			</div>
+			<!-- /.listing-box-attributes -->
+		  </div>
+		  <!-- /.listing-box-inner -->
+		</div>
+		<!-- /.listing-box -->
+	  </div>
+	  <!-- /.col-* -->
+	  <div class="col-md-6 col-lg-3">
+		<div class="listing-box">
+		  <div class="listing-box-inner">
+			<div class="listing-box-info">
+			  Currently viewing <strong>8</strong> people.
+			</div>
+			<!-- /.listing-box-info -->
+			<a href="listings-detail.html" class="listing-box-image">
+			  <span class="listing-box-image-content" style="background-image: url(/assets/explore/img/tmp/listing-4.jpg)"></span><!-- /.listing-box-image-content -->
+			  <span class="listing-box-category tag">Residential</span>
+			  <span class="listing-box-rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+			  </span>
+			</a><!-- /.listing-box-image -->
+			<div class="listing-box-content">
+			  <h2><a href="listings-detail.html">Piano Lessons For Beginners</a></h2>
+			  <h3>3071 Ash Avenue Saint Louis</h3>
+			  <div class="actions">
+				<div class="actions-button">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+				<!-- /.actions-button -->
+				<ul class="actions-list">
+				  <li><a href="#">Add to compare</a></li>
+				  <li><a href="#">Add to favorites</a></li>
+				  <li><a href="#">Report listing</a></li>
+				</ul>
+				<!-- /.actions-list -->
+			  </div>
+			  <!-- /.actions -->
+			</div>
+			<!-- /.listing-box-content -->
+			<div class="listing-box-attributes">
+			  <dl>
+				<dt>No. of Bed Rooms</dt>
+				<dd>3 BHK</dd>
+				<dt>Status</dt>
+				<dd>Upcoming</dd>
+				<dt>Type</dt>
+				<dd>Sale</dd>
+			  </dl>
+			</div>
+			<!-- /.listing-box-attributes -->
+			<div class="listing-box-attributes-icons">
+			  <ul>
+				<li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+				<li><i class="fa fa-shower"></i> <span>2</span></li>
+				<li><i class="fa fa-car"></i> <span>1</span></li>
+			  </ul>
+			</div>
+			<!-- /.listing-box-attributes -->
+		  </div>
+		  <!-- /.listing-box-inner -->
+		</div>
+		<!-- /.listing-box -->
+	  </div>
+	  <!-- /.col-* -->
+	  <div class="col-md-6 col-lg-3">
+		<div class="listing-box">
+		  <div class="listing-box-inner">
+			<a href="listings-detail.html" class="listing-box-image">
+			  <span class="listing-box-image-content" style="background-image: url(/assets/explore/img/tmp/listing-5.jpg)"></span><!-- /.listing-box-image-content -->
+			  <span class="listing-box-category tag">Commercial</span>
+			  <span class="listing-box-rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+			  </span>
+			</a><!-- /.listing-box-image -->
+			<div class="listing-box-content">
+			  <h2><a href="listings-detail.html">Royal Hall</a></h2>
+			  <h3>3690 Tecumsah Lane Cedar Rapids</h3>
+			  <div class="actions">
+				<div class="actions-button">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+				<!-- /.actions-button -->
+				<ul class="actions-list">
+				  <li><a href="#">Add to compare</a></li>
+				  <li><a href="#">Add to favorites</a></li>
+				  <li><a href="#">Report listing</a></li>
+				</ul>
+				<!-- /.actions-list -->
+			  </div>
+			  <!-- /.actions -->
+			</div>
+			<!-- /.listing-box-content -->
+			<div class="listing-box-attributes">
+			  <dl>
+				<dt>No. of Bed Rooms</dt>
+				<dd>3 BHK</dd>
+				<dt>Status</dt>
+				<dd>Upcoming</dd>
+				<dt>Type</dt>
+				<dd>Sale</dd>
+			  </dl>
+			</div>
+			<!-- /.listing-box-attributes -->
+			<div class="listing-box-attributes-icons">
+			  <ul>
+				<li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+				<li><i class="fa fa-shower"></i> <span>2</span></li>
+				<li><i class="fa fa-car"></i> <span>1</span></li>
+			  </ul>
+			</div>
+			<!-- /.listing-box-attributes -->
+		  </div>
+		  <!-- /.listing-box-inner -->
+		</div>
+		<!-- /.listing-box -->
+	  </div>
+	  <!-- /.col-* -->
+	  <div class="col-md-6 col-lg-3">
+		<div class="listing-box">
+		  <div class="listing-box-inner">
+			<a href="listings-detail.html" class="listing-box-image">
+			  <span class="listing-box-image-content" style="background-image: url(/assets/explore/img/tmp/listing-6.jpg)"></span><!-- /.listing-box-image-content -->
+			  <span class="listing-box-category tag">Commercial</span>
+			  <span class="listing-box-rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+			  </span>
+			</a><!-- /.listing-box-image -->
+			<div class="listing-box-content">
+			  <h2><a href="listings-detail.html">Erb Lumber</a></h2>
+			  <h3>2155 Philli Lane Mcalester</h3>
+			  <div class="actions">
+				<div class="actions-button">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+				<!-- /.actions-button -->
+				<ul class="actions-list">
+				  <li><a href="#">Add to compare</a></li>
+				  <li><a href="#">Add to favorites</a></li>
+				  <li><a href="#">Report listing</a></li>
+				</ul>
+				<!-- /.actions-list -->
+			  </div>
+			  <!-- /.actions -->
+			</div>
+			<!-- /.listing-box-content -->
+			<div class="listing-box-attributes">
+			  <dl>
+				<dt>No. of Bed Rooms</dt>
+				<dd>3 BHK</dd>
+				<dt>Status</dt>
+				<dd>Upcoming</dd>
+				<dt>Type</dt>
+				<dd>Sale</dd>
+			  </dl>
+			</div>
+			<!-- /.listing-box-attributes -->
+			<div class="listing-box-attributes-icons">
+			  <ul>
+				<li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+				<li><i class="fa fa-shower"></i> <span>2</span></li>
+				<li><i class="fa fa-car"></i> <span>1</span></li>
+			  </ul>
+			</div>
+			<!-- /.listing-box-attributes -->
+		  </div>
+		  <!-- /.listing-box-inner -->
+		</div>
+		<!-- /.listing-box -->
+	  </div>
+	  <!-- /.col-* -->
+	  <div class="col-md-6 col-lg-3">
+		<div class="listing-box">
+		  <div class="listing-box-inner">
+			<div class="listing-box-info">
+			  Special opening prices available.
+			</div>
+			<!-- /.listing-box-info -->
+			<a href="listings-detail.html" class="listing-box-image">
+			  <span class="listing-box-image-content" style="background-image: url(/assets/explore/img/tmp/listing-1.jpg)"></span><!-- /.listing-box-image-content -->
+			  <span class="listing-box-category tag">Residential</span>
+			  <span class="listing-box-rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+			  </span>
+			</a><!-- /.listing-box-image -->
+			<div class="listing-box-content">
+			  <h2><a href="listings-detail.html">Skateshop</a></h2>
+			  <h3>3298 Lewis Street Downers Grove</h3>
+			  <div class="actions">
+				<div class="actions-button">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+				<!-- /.actions-button -->
+				<ul class="actions-list">
+				  <li><a href="#">Add to compare</a></li>
+				  <li><a href="#">Add to favorites</a></li>
+				  <li><a href="#">Report listing</a></li>
+				</ul>
+				<!-- /.actions-list -->
+			  </div>
+			  <!-- /.actions -->
+			</div>
+			<!-- /.listing-box-content -->
+			<div class="listing-box-attributes">
+			  <dl>
+				<dt>No. of Bed Rooms</dt>
+				<dd>3 BHK</dd>
+				<dt>Status</dt>
+				<dd>Upcoming</dd>
+				<dt>Type</dt>
+				<dd>Sale</dd>
+			  </dl>
+			</div>
+			<!-- /.listing-box-attributes -->
+			<div class="listing-box-attributes-icons">
+			  <ul>
+				<li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+				<li><i class="fa fa-shower"></i> <span>2</span></li>
+				<li><i class="fa fa-car"></i> <span>1</span></li>
+			  </ul>
+			</div>
+			<!-- /.listing-box-attributes -->
+		  </div>
+		  <!-- /.listing-box-inner -->
+		</div>
+		<!-- /.listing-box -->
+	  </div>
+	  <!-- /.col-* -->
+	  <div class="col-md-6 col-lg-3">
+		<div class="listing-box">
+		  <div class="listing-box-inner">
+			<div class="listing-box-info">
+			  <strong>120</strong> people already purchased.
+			</div>
+			<!-- /.listing-box-info -->
+			<a href="listings-detail.html" class="listing-box-image">
+			  <span class="listing-box-image-content" style="background-image: url(/assets/explore/img/tmp/listing-2.jpg)"></span><!-- /.listing-box-image-content -->
+			  <span class="listing-box-category tag">Commercial</span>
+			  <span class="listing-box-rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+			  </span>
+			</a><!-- /.listing-box-image -->
+			<div class="listing-box-content">
+			  <h2><a href="listings-detail.html">Tower Excursion</a></h2>
+			  <h3>1081 Woodside Circle Crestview</h3>
+			  <div class="actions">
+				<div class="actions-button">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+				<!-- /.actions-button -->
+				<ul class="actions-list">
+				  <li><a href="#">Add to compare</a></li>
+				  <li><a href="#">Add to favorites</a></li>
+				  <li><a href="#">Report listing</a></li>
+				</ul>
+				<!-- /.actions-list -->
+			  </div>
+			  <!-- /.actions -->
+			</div>
+			<!-- /.listing-box-content -->
+			<div class="listing-box-attributes">
+			  <dl>
+				<dt>No. of Bed Rooms</dt>
+				<dd>3 BHK</dd>
+				<dt>Status</dt>
+				<dd>Upcoming</dd>
+				<dt>Type</dt>
+				<dd>Sale</dd>
+			  </dl>
+			</div>
+			<!-- /.listing-box-attributes -->
+			<div class="listing-box-attributes-icons">
+			  <ul>
+				<li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+				<li><i class="fa fa-shower"></i> <span>2</span></li>
+				<li><i class="fa fa-car"></i> <span>1</span></li>
+			  </ul>
+			</div>
+			<!-- /.listing-box-attributes -->
+		  </div>
+		  <!-- /.listing-box-inner -->
+		</div>
+		<!-- /.listing-box -->
+	  </div>
+	  <!-- /.col-* -->
+	  <div class="col-md-6 col-lg-3">
+		<div class="listing-box">
+		  <div class="listing-box-inner">
+			<div class="listing-box-info">
+			  Most visited monthly trendsetter.
+			</div>
+			<!-- /.listing-box-info -->
+			<a href="listings-detail.html" class="listing-box-image">
+			  <span class="listing-box-image-content" style="background-image: url(/assets/explore/img/tmp/listing-5.jpg)"></span><!-- /.listing-box-image-content -->
+			  <span class="listing-box-category tag">Residential</span>
+			  <span class="listing-box-rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+			  </span>
+			</a><!-- /.listing-box-image -->
+			<div class="listing-box-content">
+			  <h2><a href="listings-detail.html">Griff's Hamburgers</a></h2>
+			  <h3>3228 Hillview Street Columbia</h3>
+			  <div class="actions">
+				<div class="actions-button">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+				<!-- /.actions-button -->
+				<ul class="actions-list">
+				  <li><a href="#">Add to compare</a></li>
+				  <li><a href="#">Add to favorites</a></li>
+				  <li><a href="#">Report listing</a></li>
+				</ul>
+				<!-- /.actions-list -->
+			  </div>
+			  <!-- /.actions -->
+			</div>
+			<!-- /.listing-box-content -->
+			<div class="listing-box-attributes">
+			  <dl>
+				<dt>No. of Bed Rooms</dt>
+				<dd>3 BHK</dd>
+				<dt>Status</dt>
+				<dd>Upcoming</dd>
+				<dt>Type</dt>
+				<dd>Sale</dd>
+			  </dl>
+			</div>
+			<!-- /.listing-box-attributes -->
+			<div class="listing-box-attributes-icons">
+			  <ul>
+				<li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+				<li><i class="fa fa-shower"></i> <span>2</span></li>
+				<li><i class="fa fa-car"></i> <span>1</span></li>
+			  </ul>
+			</div>
+			<!-- /.listing-box-attributes -->
+		  </div>
+		  <!-- /.listing-box-inner -->
+		</div>
+		<!-- /.listing-box -->
+	  </div>
+	  <!-- /.col-* -->
+	  <div class="col-md-6 col-lg-3">
+		<div class="listing-box">
+		  <div class="listing-box-inner">
+			<div class="listing-box-info">
+			  Last two spots open.
+			</div>
+			<!-- /.listing-box-info -->
+			<a href="listings-detail.html" class="listing-box-image">
+			  <span class="listing-box-image-content" style="background-image: url(/assets/explore/img/tmp/listing-4.jpg)"></span><!-- /.listing-box-image-content -->
+			  <span class="listing-box-category tag">Residential</span>
+			  <span class="listing-box-rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+			  </span>
+			</a><!-- /.listing-box-image -->
+			<div class="listing-box-content">
+			  <h2><a href="listings-detail.html">Photo Services</a></h2>
+			  <h3>3074 Asylum Avenue Danbury</h3>
+			  <div class="actions">
+				<div class="actions-button">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+				<!-- /.actions-button -->
+				<ul class="actions-list">
+				  <li><a href="#">Add to compare</a></li>
+				  <li><a href="#">Add to favorites</a></li>
+				  <li><a href="#">Report listing</a></li>
+				</ul>
+				<!-- /.actions-list -->
+			  </div>
+			  <!-- /.actions -->
+			</div>
+			<!-- /.listing-box-content -->
+			<div class="listing-box-attributes">
+			  <dl>
+				<dt>No. of Bed Rooms</dt>
+				<dd>3 BHK</dd>
+				<dt>Status</dt>
+				<dd>Upcoming</dd>
+				<dt>Type</dt>
+				<dd>Sale</dd>
+			  </dl>
+			</div>
+			<!-- /.listing-box-attributes -->
+			<div class="listing-box-attributes-icons">
+			  <ul>
+				<li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+				<li><i class="fa fa-shower"></i> <span>2</span></li>
+				<li><i class="fa fa-car"></i> <span>1</span></li>
+			  </ul>
+			</div>
+			<!-- /.listing-box-attributes -->
+		  </div>
+		  <!-- /.listing-box-inner -->
+		</div>
+		<!-- /.listing-box -->
+	  </div>
+	  <!-- /.col-* -->
+	  <div class="col-md-6 col-lg-3">
+		<div class="listing-box">
+		  <div class="listing-box-inner">
+			<a href="listings-detail.html" class="listing-box-image">
+			  <span class="listing-box-image-content" style="background-image: url(/assets/explore/img/tmp/listing-5.jpg)"></span><!-- /.listing-box-image-content -->
+			  <span class="listing-box-category tag">Commercial</span>
+			  <span class="listing-box-rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+			  </span>
+			</a><!-- /.listing-box-image -->
+			<div class="listing-box-content">
+			  <h2><a href="listings-detail.html">Sushi Bar</a></h2>
+			  <h3>2464 Par Drive Los Angeles</h3>
+			  <div class="actions">
+				<div class="actions-button">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+				<!-- /.actions-button -->
+				<ul class="actions-list">
+				  <li><a href="#">Add to compare</a></li>
+				  <li><a href="#">Add to favorites</a></li>
+				  <li><a href="#">Report listing</a></li>
+				</ul>
+				<!-- /.actions-list -->
+			  </div>
+			  <!-- /.actions -->
+			</div>
+			<!-- /.listing-box-content -->
+			<div class="listing-box-attributes">
+			  <dl>
+				<dt>No. of Bed Rooms</dt>
+				<dd>3 BHK</dd>
+				<dt>Status</dt>
+				<dd>Upcoming</dd>
+				<dt>Type</dt>
+				<dd>Sale</dd>
+			  </dl>
+			</div>
+			<!-- /.listing-box-attributes -->
+			<div class="listing-box-attributes-icons">
+			  <ul>
+				<li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+				<li><i class="fa fa-shower"></i> <span>2</span></li>
+				<li><i class="fa fa-car"></i> <span>1</span></li>
+			  </ul>
+			</div>
+			<!-- /.listing-box-attributes -->
+		  </div>
+		  <!-- /.listing-box-inner -->
+		</div>
+		<!-- /.listing-box -->
+	  </div>
+	  <!-- /.col-* -->
+	  <div class="col-md-6 col-lg-3">
+		<div class="listing-box">
+		  <div class="listing-box-inner">
+			<a href="listings-detail.html" class="listing-box-image">
+			  <span class="listing-box-image-content" style="background-image: url(/assets/explore/img/tmp/listing-6.jpg)"></span><!-- /.listing-box-image-content -->
+			  <span class="listing-box-category tag">Residential</span>
+			  <span class="listing-box-rating">
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+				<i class="fa fa-star-o"></i>
+			  </span>
+			</a><!-- /.listing-box-image -->
+			<div class="listing-box-content">
+			  <h2><a href="listings-detail.html">Nightlife Party Club</a></h2>
+			  <h3>1542 Rocket Drive Minneapolis</h3>
+			  <div class="actions">
+				<div class="actions-button">
+				  <span></span>
+				  <span></span>
+				  <span></span>
+				</div>
+				<!-- /.actions-button -->
+				<ul class="actions-list">
+				  <li><a href="#">Add to compare</a></li>
+				  <li><a href="#">Add to favorites</a></li>
+				  <li><a href="#">Report listing</a></li>
+				</ul>
+				<!-- /.actions-list -->
+			  </div>
+			  <!-- /.actions -->
+			</div>
+			<!-- /.listing-box-content -->
+			<div class="listing-box-attributes">
+			  <dl>
+				<dt>No. of Bed Rooms</dt>
+				<dd>3 BHK</dd>
+				<dt>Status</dt>
+				<dd>Upcoming</dd>
+				<dt>Type</dt>
+				<dd>Sale</dd>
+			  </dl>
+			</div>
+			<!-- /.listing-box-attributes -->
+			<div class="listing-box-attributes-icons">
+			  <ul>
+				<li><i class="fa fa-arrows"></i> <span>182sqft</span></li>
+				<li><i class="fa fa-shower"></i> <span>2</span></li>
+				<li><i class="fa fa-car"></i> <span>1</span></li>
+			  </ul>
+			</div>
+			<!-- /.listing-box-attributes -->
+		  </div>
+		  <!-- /.listing-box-inner -->
+		</div>
+		<!-- /.listing-box -->
+	  </div>
+	  <!-- /.col-* -->
+	</div>
+	<!-- /.row -->
+	<div class="row">
+	  <div class="col-sm-12">
+		<ul class="pagination pull-right">
+		  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+		  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+		  <li class="page-item"><a class="page-link" href="#">2</a></li>
+		  <li class="page-item"><a class="page-link" href="#">3</a></li>
+		  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+		</ul>
+	  </div>
+	  <!-- /.col-* -->
+	</div>
+  </div>
+  <!-- /.content -->
+</div>
+<!-- /.col-* -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container-fluid -->
